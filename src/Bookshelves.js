@@ -38,8 +38,8 @@ const Bookshelves = ({ books }) => (
     </div>
     <Link
       to='/search'
-      className='search'
-      ></Link> 
+      className='search-link'
+      >Search Book</Link> 
   </div>
 )
 
