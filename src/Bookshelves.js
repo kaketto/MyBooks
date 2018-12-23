@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Book from './Book'
+import { Link } from 'react-router-dom'
 
 const Bookshelves = ({ books }) => (
   <div>
@@ -34,7 +35,11 @@ const Bookshelves = ({ books }) => (
           </li>
         ))}
       </ul>
-    </div>  
+    </div>
+    <Link
+      to='/search'
+      className='search'
+      >Search Book</Link> 
   </div>
 )
 
