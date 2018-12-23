@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import ShelfSelector from './ShelfSelector'
+import Book from './Book'
 
 const Bookshelves = ({ books }) => (
   <div>
@@ -10,8 +10,7 @@ const Bookshelves = ({ books }) => (
       <ul className='book-list'>
         {books.filter(book => book.shelf === 'currentlyReading').map(book => (
           <li key={book.title}>
-            <img alt={book.title} className='bookimage' src={book.imageLinks.thumbnail}/>
-            <ShelfSelector book={book} shelf={book.shelf}/>
+            <Book book={book} shelf={book.shelf}/>
           </li>
         ))}
       </ul>
@@ -21,8 +20,7 @@ const Bookshelves = ({ books }) => (
       <ul className='book-list'>
         {books.filter(book => book.shelf === 'wantToRead').map(book => (
           <li key={book.title}>
-            <img alt={book.title} className='bookimage' src={book.imageLinks.thumbnail}/>
-            <ShelfSelector book={book} shelf={book.shelf}/>
+            <Book book={book} shelf={book.shelf}/>
           </li>
         ))}
       </ul>
@@ -32,8 +30,7 @@ const Bookshelves = ({ books }) => (
       <ul className='book-list'>
         {books.filter(book => book.shelf === 'read').map(book => (
           <li key={book.title}>
-            <img alt={book.title} className='bookimage' src={book.imageLinks.thumbnail}/>
-            <ShelfSelector book={book} shelf={book.shelf} />
+            <Book book={book} shelf={book.shelf} />
           </li>
         ))}
       </ul>
