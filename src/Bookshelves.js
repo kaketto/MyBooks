@@ -39,7 +39,7 @@ const Bookshelves = ({ books }) => (
     <Link
       to='/search'
       className='search'
-      >Search Book</Link> 
+      ></Link> 
   </div>
 )
 
