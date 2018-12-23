@@ -4,6 +4,7 @@ import * as BooksAPI from './utils/BooksAPI'
 
 const SearchBook = () => (
   <div>
+    <h1 className='header'>My Books</h1>
     <p>Search new book</p>
     <div>
       <input
