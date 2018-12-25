@@ -7,7 +7,7 @@ import * as BooksAPI from './utils/BooksAPI'
 class SearchBook extends React.Component {
   static propTypes = {
 		books: PropTypes.array.isRequired,
-		onChangeShelf: PropTypes.func.isRequired
+		onUpdateShelf: PropTypes.func.isRequired
   }
   
   state = {
@@ -16,10 +16,8 @@ class SearchBook extends React.Component {
   }
 
   updateQuery = (query) => {
-    this.setState({ query: query.trim()});
-    if (query) {
-      this.getBooks(query);
-    }
+    this.setState({ query });
+    query ? this.getBooks(query) : this.setState({ books: []});
   }
 
   getBooks = (query) => {
@@ -55,7 +53,7 @@ class SearchBook extends React.Component {
         <ul className="book-list">
           {this.state.books.map(book => (
             <li key={book.id}>
-              <Book book={book} onChangeShelf={this.props.onChangeShelf} />
+              <Book book={book} onUpdateShelf={this.props.onUpdateShelf} />
             </li>
           ))}
         </ul>

@@ -15,19 +15,20 @@ class App extends React.Component {
 			this.setState({ books }))
   }
   
-  changeShelf = (bookToUpdate, newShelf) => {
-    const newBooks = this.state.books.map(book => {
+  updateShelf = (bookToUpdate, newShelf) => {
+    const booksWithUpdatedShelf = this.state.books.map(book => {     
       if(book.id !== bookToUpdate.id) return book;
       return {
           ...book,
           shelf : newShelf
       };
     });
-    this.setState({books : newBooks});
-
-    BooksAPI.update(bookToUpdate, newShelf).then(res =>
-      console.log(res)
-    );
+    if(!this.state.books.includes(bookToUpdate)) {
+      bookToUpdate.shelf = newShelf;
+      booksWithUpdatedShelf.push(bookToUpdate);
+    }
+    this.setState({books : booksWithUpdatedShelf});
+    BooksAPI.update(bookToUpdate, newShelf);
   }
 
   render() {
@@ -36,13 +37,13 @@ class App extends React.Component {
         <Route exact path="/" render={() => (
           <Bookshelves 
             books={this.state.books}
-            onChangeShelf={this.changeShelf}
+            onUpdateShelf={this.updateShelf}
             />
         )}/>
         <Route path="/search" render={() => (
           <SearchBook
             books={this.state.books}
-            onChangeShelf={this.changeShelf}/>
+            onUpdateShelf={this.updateShelf}/>
         )}/>
       </div>
     );

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Book from './Book'
 import { Link } from 'react-router-dom'
 
-const Bookshelves = ({ books, onChangeShelf }) => (
+const Bookshelves = ({ books, onUpdateShelf }) => (
   <div>
     <h1 className="header">My Books</h1>
     <div className="bookshelf">
@@ -11,7 +11,7 @@ const Bookshelves = ({ books, onChangeShelf }) => (
       <ul className="book-list">
         {books.filter(book => book.shelf === 'currentlyReading').map(book => (
           <li key={book.id}>
-            <Book book={book} onChangeShelf={onChangeShelf} />
+            <Book book={book} onUpdateShelf={onUpdateShelf} />
           </li>
         ))}
       </ul>
@@ -21,7 +21,7 @@ const Bookshelves = ({ books, onChangeShelf }) => (
       <ul className="book-list">
         {books.filter(book => book.shelf === 'wantToRead').map(book => (
           <li key={book.id}>
-            <Book book={book} onChangeShelf={onChangeShelf} />
+            <Book book={book} onUpdateShelf={onUpdateShelf} />
           </li>
         ))}
       </ul>
@@ -31,7 +31,7 @@ const Bookshelves = ({ books, onChangeShelf }) => (
       <ul className="book-list">
         {books.filter(book => book.shelf === 'read').map(book => (
           <li key={book.id}>
-            <Book book={book} onChangeShelf={onChangeShelf} />
+            <Book book={book} onUpdateShelf={onUpdateShelf} />
           </li>
         ))}
       </ul>
@@ -45,7 +45,7 @@ const Bookshelves = ({ books, onChangeShelf }) => (
 
 Bookshelves.propTypes = {
   books: PropTypes.array.isRequired,
-  onChangeShelf: PropTypes.func.isRequired
+  onUpdateShelf: PropTypes.func.isRequired
 }
 
 export default Bookshelves
