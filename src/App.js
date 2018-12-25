@@ -31,13 +31,13 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <Route exact path='/' render={() => (
+        <Route exact path="/" render={() => (
           <Bookshelves 
             books={this.state.books}
             onChangeShelf={this.changeShelf}
             />
         )}/>
-        <Route path='/search' render={() => (
+        <Route path="/search" render={() => (
           <SearchBook/>
         )}/>
       </div>

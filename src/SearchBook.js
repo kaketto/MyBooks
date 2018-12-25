@@ -5,16 +5,16 @@ import * as BooksAPI from './utils/BooksAPI'
 
 const SearchBook = () => (
   <div>
-    <h1 className='header'>My Books</h1>
-    <div className='search-bar'>
+    <h1 className="header">My Books</h1>
+    <div className="search-bar">
       <Link
-        to='/'
-        className='back-link'
+        to="/"
+        className="back-link"
       >Back</Link> 
       <input
-        className='search-contacts'
-        type='text'
-        placeholder='Search by title or author'
+        className="search-book"
+        type="text"
+        placeholder="Search by title or author"
 //         value={''}
         onChange={(event) => ''}
        />
