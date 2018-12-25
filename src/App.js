@@ -25,7 +25,9 @@ class App extends React.Component {
     });
     this.setState({books : newBooks});
 
-    BooksAPI.update(bookToUpdate, newShelf);
+    BooksAPI.update(bookToUpdate, newShelf).then(res =>
+      console.log(res)
+    );
   }
 
   render() {
@@ -38,7 +40,9 @@ class App extends React.Component {
             />
         )}/>
         <Route path="/search" render={() => (
-          <SearchBook/>
+          <SearchBook
+            books={this.state.books}
+            onChangeShelf={this.changeShelf}/>
         )}/>
       </div>
     );
