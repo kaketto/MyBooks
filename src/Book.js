@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 const Book = ({ book, onUpdateShelf }) => (
   <div className="book">
-    <img alt={book.title} className="bookimage" src={book.imageLinks.thumbnail}/>
+    <img alt={book.title} className="bookimage" src={book.imageLinks ? book.imageLinks.thumbnail : null}/>
     <div className="bookshelf-changer">
       <select onChange={(event) => onUpdateShelf(book, event.target.value)} value={book.shelf}>
         <option value="move" disabled>Move to...</option>

@@ -101,10 +101,32 @@ h1, h2 {
   font-size: 0px;
 }
 
-.search-book {
+.search-book-input {
   margin: 10px;
   width: 100%;
   height: 30px;
   font-size: 15px;
   border: 0px;
+}
+
+.search-book-input:focus {
+  outline: none;
+}
+
+input:focus,
+input:active {
+  border-color: transparent;
+  border-bottom: 1px solid #58B19F;
+}
+
+.error-message {
+  width: 70%;
+  margin: auto;
+  margin-top: 30px;
+  text-align: center;
+}
+
+.search-terms {
+  color: #2C3A47;
+  font-size: 10px;
 }
