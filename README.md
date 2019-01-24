@@ -1,5 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+A book tracking app inspired by a Udacity project to collect and categorize books to read, being read or have read. 
+
 ## Available Scripts
 
 In the project directory, you can run:
